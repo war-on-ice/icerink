@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rink Plots</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/rink-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/rinkPlot.js"></script>
+</head>
+<body>
+
+<h2>Rink Plots</h2>
+<h3>Full Rink, Horizontal</h3>
+<div class="chart" id="full-rink-horz"></div>
+<h3>Full Rink, Vertical</h3>
+<div class="chart" id="full-rink-vert"></div>
+<h3>Half Rink, Horizontal</h3>
+<div class="chart" id="half-rink-horz"></div>
+<h3>Half Rink, Vertial</h3>
+<div class="chart" id="half-rink-vert"></div>
+
+<script>
+$(document).ready(function(){
+    var fullHorzSvg = d3.select("#full-rink-horz")
+         .append("svg")
+         .attr("width", 1000)
+         .attr("height", 500);
+
+    var fullHorzPlot = new RINK_MAP({parent: fullHorzSvg, fullRink: true, desiredWidth: 400, horizontal: true});
+
+    fullHorzPlot();
+
+    var fullVertSvg = d3.select("#full-rink-vert")
+         .append("svg")
+         .attr("width", 1000)
+         .attr("height", 1000);
+
+    var fullVertPlot = new RINK_MAP({parent: fullVertSvg, fullRink: true, desiredWidth: 400, horizontal: false});
+
+    fullVertPlot();
+
+    var halfHorzSvg = d3.select("#half-rink-horz")
+         .append("svg")
+         .attr("width", 1000)
+         .attr("height", 500);
+
+    var halfHorzPlot = new RINK_MAP({parent: halfHorzSvg, fullRink: false, desiredWidth: 400, horizontal: true});
+
+    halfHorzPlot();
+
+    var halfVertSvg = d3.select("#half-rink-vert")
+         .append("svg")
+         .attr("width", 1000)
+         .attr("height", 550);
+
+    var halfVertPlot = new RINK_MAP({parent: halfVertSvg, fullRink: false, desiredWidth: 400, horizontal: false});
+
+    halfVertPlot();    
+});
+</script>
+
+</body>
+</html>

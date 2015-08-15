@@ -1,0 +1,33 @@
+.blue-line{
+    fill: blue;
+}
+
+.red-line{
+    fill: red;
+}
+
+.red-faceoff{
+    stroke: red;
+}
+
+.rink-face{
+    stroke: gray;
+    fill: white;
+}
+
+.goal-crease{
+    fill: lightblue;
+    stroke: red;
+}
+
+.center-line{
+    fill: red;
+}
+
+.neutral-faceoff{
+    stroke: blue;
+}
+
+.danger-line{
+    stroke: gray;
+}
